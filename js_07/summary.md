@@ -104,3 +104,5 @@ arr.pop();
 `arrays.map(callbackfn)` : 콜백에서 정의한 결과에 해당하는 값으로 변경한 후 리턴 ⚠️
 
 `arrays.join(seperator)` : arrays의 요소들을 seperator로 나눠서 연결한 다음 String으로 리턴
+
+`arrays.sort(a, b) => a - b` : 이전값과 현재 값이 statement에 전달되고, -값이 반환되면, 작은 값부터 정렬 / +값이 반환되면, 큰 값부터 정렬 ⚠️
