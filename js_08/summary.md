@@ -50,7 +50,7 @@ Client, 서버간 하이퍼텍스트를 주고받기 위한 통신 규약(프로
 
 ### XML
 
-HTML과 같은 태그를 이용해 데이터를 나타내는 Mark-Up 언
+HTML과 같은 태그를 이용해 데이터를 나타내는 Mark-Up 언어
 
 Ajax나 XHR의 X는 모두 XML을 뜻하는데, `서버와 데이터를 주고 받을 때는 XML만 가능할까?`
 
@@ -84,17 +84,72 @@ C, C#, Java, Python, PHP, Kotlin, Go ...
 
 ![serialization_diagram](./assets/serialization_diagram.jpeg)
 
+#### Object to JSON
+
 그렇다면 js에서는 어떻게 Object를 JSON으로, JSON을 Object로 변경할까?
 
 ```js
 //1. Object to JSON
 // stringify(obj)
-
-let json = JSON.stringify()
-
+let json = JSON.stringify(true);
+console.log(json);
 ```
 
+```js
+const rabbit = {
+  name: 'tori',
+  color: 'white',
+  size: null,
+  birthDate: new Date(),
+  symbol: Symbol('id'),
+  jump: () => {
+    console.log(`${name} can jump!`);
+  },
+};
 
+json = JSON.stringify(rabbit);
+console.log(json);
+
+json = JSON.stringify(rabbit, ['name', 'color']);
+console.log(json);
+
+json = JSON.stringify(rabbit, (key, value) => {
+  console.log(`key: ${key}, value: ${value}`);
+  return key === 'name' ? 'ellie' : value;
+})
+console.log(json);
+```
+⚠️
+* `javascript에서 제공하는 특별한 데이터`인 `Symbol`의 경우 json에 포함되지 않는다.
+* `jump에 해당하는 함수는 Object 내부에 포함되지 않은 데이터`이기 때문에 json에서는 제외된다. 
+* stringify 대상의 `원하는 데이터만을 json으로 뽑아낼 수도 있다`.
+* stringify 대상 Object의 `key, value 값을 받아서 커스텀 처리가 가능`하다. (위의 경우, key값이 name이면, ellie로 대체, 그 외 key에 대해서는 그냥 value를 반환하고 있다.)
+
+#### JSON to Object
+
+```js
+//2. JSON to Object
+
+const rabbit = {
+  name: 'tori',
+  color: 'white',
+  size: null,
+  birthDate: new Date(),
+  symbol: Symbol('id'),
+  jump: () => {
+    console.log(`${name} can jump!`);
+  },
+};
+
+console.clear();
+json = JSON.stringify(rabbit);
+const obj = JSON.parse(json);
+console.log(obj);
+```
+parse 함수를 통해 간단하게 JSON 데이터를 Object로 변환할 수 있다.
+
+위 경우, JSON으로 데이터를 변환하고, 해당 데이터를 바탕으로 Object화 한 객체에는 jump, symbol 데이터가 들어있지 않기 때문에,
+`json.jump();`를 하더라도 실행되지 않는다.
 
 
 
