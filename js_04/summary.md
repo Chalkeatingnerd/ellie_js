@@ -109,6 +109,11 @@ printAll('dream', 'coding', 'ellie');
 
 rest parameter로 지정된 parameter은 배열 형태로 전달되게 된다.
 
+> 일반 rest paramenter과 arguments object의 차이점
+> 
+> 1. arguments object는 진짜 배열이 아니다. 반면에 `...` rest paramenter의 경우, 배열 인스턴스이기 때문에, sort, map, forEach, pop 등을 직접 적용시킬 수 있다.
+
+
 ## local scope
 
 지난 번에 block scope, global scope에 대해 알아봤다. 나중에 심화된 javascript 내용을 공부하다보면, Closure나 lexical environment에 대해 들을 것이다.
