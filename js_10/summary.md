@@ -1,6 +1,6 @@
-## js_summary10 ⚠️
+# js_summary10 ⚠️
 
-### 1. Promise
+## 1. Promise
 
 `Promise`는 **JavaScript에서 제공하는 비동기를 간편하게 처리할 수 있도록 도와주는 Object**이다.
 
@@ -63,7 +63,7 @@ reject는 보통 Error Object를 통해 값을 전달한다.  ~ [error_handling]
 
 `finally` is called at the end of the promise as a default and callbackfn is processed
 
-### 2. Promise Chaning
+## 2. Promise Chaning
 
  
 

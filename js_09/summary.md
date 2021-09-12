@@ -1,6 +1,6 @@
-## js_summary09 ⚠️
+# js_summary09 ⚠️
 
-### JavaScript is `synchronous` ⚠️
+## JavaScript is `synchronous` ⚠️
 
 * `JavaScript is synchronous`.
 * JavaScript `execute code blocks in order after hoisting`.
@@ -40,9 +40,9 @@ console.log(3);
 
 setTimeout 함수의 parameter로 전달한 함수는 callbackfn으로서 전달됨
 
-### synchronous callback & asynchronous callback
+## synchronous callback & asynchronous callback
 
-#### 1. synchronous callback
+### 1. synchronous callback
 ```js
 console.log(1);
 setTimeout(() => {
@@ -70,7 +70,7 @@ printImmediately(() => console.log('print something'));
 5. function 실행
 6. 1초 뒤 response인 callback function 실행 → 2 출력
 
-#### 2. asynchronous function
+### 2. asynchronous function
 
 ```js
 console.log(1); //sync
@@ -99,7 +99,7 @@ printWithDelay(() => console.log('async callback', 2000)); //async
 
 언어마다 callback을 지원하는 방식은 저마다 차이점이 존재한다. sub routine, lamda expression, function pointer등
 
-### callback hell
+## callback hell
 
 
 
