@@ -14,6 +14,8 @@ Promise는 정해진 장시간의 기능을 수행하고 나서, `정상적으�
 	* `fulfilled` (when the operation is successfully conducted) 
 	* `rejected` (if something's wrong with network or cannot find file)
 	
+		**만약 Promise 내부에서 resolve 또는 reject 처리를 정의해주지 않으면, 계속해서 Promise의 Status가 pending으로 유지된다.**
+
 
 * Producer vs Consumer 
 	* Producer : 우리가 원하는 정보를 제공하는 사람
@@ -79,30 +81,3 @@ reject는 보통 Error Object를 통해 값을 전달한다.  ~ [error_handling]
 > then은 `Promise를 리턴`하게 되고, 해당 리턴된 Promise에 `catch를 호출`할 수 있게 된다. 이런 `연쇄 함수 호출을 chaning`이라고 한다.
 > 
 > Collection 함수들이나 array 함수들에서 자주 사용된다.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
